@@ -1,0 +1,146 @@
+@import 'node_modules/sal.js/dist/sal.css';
+
+:root {
+  font-size: 18px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('~assets/fonts/Poppins-Regular.woff2') format('woff2'),
+        url('~assets/fonts/Poppins-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('~assets/fonts/Poppins-Medium.woff2') format('woff2'),
+        url('~assets/fonts/Poppins-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('~assets/fonts/Poppins-SemiBold.woff2') format('woff2'),
+        url('~assets/fonts/Poppins-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('~assets/fonts/Poppins-Bold.woff2') format('woff2'),
+  url('~assets/fonts/Poppins-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+    font-family: 'EBGaramond';
+    src: url('~assets/fonts/EBGaramond-VariableFont.woff2') format('woff2'),
+        url('~assets/fonts/EBGaramond-VariableFont.woff') format('woff');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Potion';
+    src: url('~assets/fonts/Potion.woff2') format('woff2'),
+        url('~assets/fonts/Potion.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+.main-bg-texture::before {
+  content: "";
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background: url('~/assets/backgrounds/texture.webp') no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* stylelint-disable-line at-rule-no-unknown */
+@screen sm {
+  .main-bg-texture::before {
+    background-image: url('~/assets/backgrounds/texture-3-4.webp');
+  }
+}
+/* stylelint-disable-line at-rule-no-unknown */
+@screen md {
+  .main-bg-texture::before {
+    background-image: url('~/assets/backgrounds/texture-4-3.webp');
+  }
+}
+/* stylelint-disable-line at-rule-no-unknown */
+@screen lg {
+  .main-bg-texture::before {
+    background-image: url('~/assets/backgrounds/texture-16-9.webp');
+  }
+}
+
+@supports (backdrop-filter: blur(10px)) {
+  .glass-card {
+    background: radial-gradient(
+      77.23% 77.23% at 13.57% 18.81%,
+      rgba(255, 255, 255, 0.05) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    box-shadow: 0 4px 10px rgba(26, 21, 46, 0.2);
+  }
+}
+
+@supports not (backdrop-filter: blur(10px)) {
+  .glass-card {
+    background: radial-gradient(
+      77.23% 77.23% at 13.57% 18.81%,
+      rgba(117, 117, 117, 0.3) 0%,
+      rgba(117, 117, 117, 0.1) 100%
+    );
+    box-shadow: 0 4px 10px rgba(26, 21, 46, 0.2);
+  }
+}
+
+.header-link svg {
+  @apply w-full h-full;
+}
+
+/**
+ * Enable smooth scrolling on the whole document
+ */
+html {
+  scroll-behavior: smooth;
+}
+
+/**
+ * Disable smooth scrolling when users have prefers-reduced-motion enabled
+ */
+@media screen and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
