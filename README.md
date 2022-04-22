@@ -1,4 +1,4 @@
-# potion-landing
+# potion.fi
 
 ## Build Setup
 
